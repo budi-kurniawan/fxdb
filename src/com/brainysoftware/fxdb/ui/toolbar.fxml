@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<?import javafx.scene.*?> 
+<?import javafx.scene.control.*?> 
+<?import javafx.scene.layout.*?> 
+<?import javafx.geometry.Insets?> 
+<?import javafx.scene.image.Image?> 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.*?>
+
+<ToolBar xmlns:fx="http://javafx.com/fxml" fx:id="toolBar"
+        fx:controller="com.brainysoftware.fxdb.ui.ToolBarController">
+    <Group fx:id="tablesToolBarGroup">
+        <HBox>
+            <Button fx:id="newTableToolBarButton" text="New Table" 
+                    onAction="#handleNewTableAction">
+                <graphic>
+                    <ImageView fitWidth="15" fitHeight="15">
+                        <!-- the @ prefix indicates a location relative to the current fxml file-->
+                        <Image url="@../../../../image/new-table.png"/>
+                </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Create Table"/> 
+                </tooltip>
+            </Button>
+            <Button fx:id="editTableToolBarButton" text="Edit Table"
+		            onAction="#handleEditTableAction"> 
+                <graphic>
+                    <ImageView>
+                        <!-- the @ prefix indicates a location relative to the current fxml file-->
+                        <Image url="@../../../../image/edit-table.png"/>
+                </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Edit Table"/> 
+                </tooltip>
+            </Button>
+            <Button fx:id="deleteTableToolBarButton" text="Delete Table" 
+		            onAction="#handleDeleteTableAction">
+                <graphic>
+                    <ImageView>
+                        <!-- the @ prefix indicates a location relative to the current fxml file-->
+                        <Image url="@../../../../image/delete-table.png"/>
+                </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Delete Table"/> 
+                </tooltip>
+            </Button>
+        </HBox>
+    </Group>
+    <Group fx:id="sqlToolBarGroup">
+        <HBox>
+            <Button fx:id="executeSQLToolBarButton" text="Execute" 
+            		onKeyPressed="#handleSQLButtonKeyPressed"/>            
+            <Button fx:id="saveSQLToolBarButton" text="Save" onAction="#handleSaveSQLAction"/>
+            <ComboBox fx:id="savedSQLToolBarComboBox" onAction="#handleSavedSQLSelectedAction"/>
+            <Button fx:id="deleteSQLToolBarButton" text="Delete"
+                onAction="#handleDeleteSQLAction"/>
+        </HBox>
+    </Group>
+</ToolBar> 

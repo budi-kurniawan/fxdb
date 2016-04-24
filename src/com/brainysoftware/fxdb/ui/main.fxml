@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import javafx.scene.*?> 
+<?import javafx.scene.control.*?> 
+<?import javafx.scene.layout.*?> 
+<?import javafx.geometry.Insets?> 
+<?import javafx.scene.image.Image?> 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.collections.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+        fx:controller="com.brainysoftware.fxdb.ui.MainController"
+        prefWidth="1000" prefHeight="600"
+        onKeyPressed="#handleKeyInput">
+    <top>
+        <VBox>
+            <fx:include fx:id="menuBar" source="menu.fxml"/>
+            <fx:include fx:id="toolBar" source="toolbar.fxml"/>
+        </VBox>
+    </top>
+    <center>
+        <TabPane fx:id="tabPane" side="RIGHT">
+            <tabs>        
+                <Tab fx:id="tablesTab" text="Tables"  closable="false"
+                        onSelectionChanged="#handleTabSelected">
+                    <SplitPane orientation="HORIZONTAL" dividerPositions="0.2f, 0.8f">
+                        <items>
+                            <VBox>
+                                <Label>Tables:</Label>
+                                <ListView fx:id="tableListView"></ListView>
+                            </VBox>
+                            <StackPane fx:id="tableStackPane"/>
+                        </items>
+                    </SplitPane>
+                </Tab>
+                <!-- 
+                <Tab fx:id="formsTab" text="Forms"  closable="false"
+                        onSelectionChanged="#handleTabSelected" disable="true">
+                    <SplitPane orientation="HORIZONTAL" dividerPositions="0.2f, 0.8f">
+                        <items>
+                            <VBox>
+                                <Label>Forms:</Label>
+                                <ListView fx:id="formListView"></ListView>
+                            </VBox>
+                            <StackPane fx:id="formStackPane"/>
+                        </items>
+                    </SplitPane>
+                </Tab>
+                <Tab fx:id="reportsTab" text="Reports" closable="false" 
+                        onSelectionChanged="#handleTabSelected" disable="true">
+                    <SplitPane orientation="HORIZONTAL" dividerPositions="0.2f, 0.8f">
+                        <items>
+                            <VBox>
+                                <Label text="Select Report"/>
+                                <ComboBox fx:id="reportTypeComboBox" onAction="#handleReportTypeSelectedAction">
+                                </ComboBox>
+                                <ComboBox fx:id="reportSubtypeComboBox"></ComboBox>
+                                <Button fx:id="selectReportButton">Submit</Button> 
+                            </VBox>
+                            <StackPane fx:id="reportStackPane"/>
+                        </items>
+                    </SplitPane>
+                </Tab>
+                -->
+                <Tab fx:id="sqlTab" text="SQL" closable="false"
+                        onSelectionChanged="#handleTabSelected" 
+                        >
+                    <SplitPane orientation="VERTICAL" dividerPositions="0.2f, 0.8f">
+                        <items>
+                            <VBox>
+                                <Label>SQL statement:</Label>
+                                <TextArea fx:id="sqlStatementTextArea"/>
+                            </VBox>
+                            <StackPane fx:id="sqlResultStackPane"/>
+                        </items>
+                    </SplitPane>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center> 
+</BorderPane>

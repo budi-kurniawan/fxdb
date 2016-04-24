@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<?import javafx.scene.*?> 
+<?import javafx.scene.control.*?> 
+<?import javafx.scene.layout.*?> 
+<?import javafx.geometry.Insets?> 
+<?import javafx.scene.image.Image?> 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.*?>
+
+<MenuBar xmlns:fx="http://javafx.com/fxml" fx:id="menuBar" 
+        fx:controller="com.brainysoftware.fxdb.ui.MenuController">
+    <menus>
+        <Menu text="File">
+            <items>
+                <MenuItem text="New" visible="false"/>
+                <MenuItem text="Open" visible="false"/>
+                <MenuItem text="Save" visible="false"/>
+                <MenuItem text="Save As" visible="false"/>
+                <SeparatorMenuItem />
+                <MenuItem text="Exit" onAction="#handleExit"/>
+            </items>
+        </Menu>
+        <Menu text="Help">
+            <items>
+                <MenuItem text="Search" disable="true"/>
+                <MenuItem text="Online Manual" visible="false"/>
+                <SeparatorMenuItem />
+                <MenuItem text="About" onAction="#handleAboutAction"/>
+            </items>
+        </Menu>
+    </menus>
+</MenuBar> 

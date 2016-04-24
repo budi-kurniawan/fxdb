@@ -1,0 +1,30 @@
+
+.table-row-cell:empty {
+	-fx-background-color: white;
+	-fx-border-color: white;
+} 
+ 
+.table-row-cell:empty .table-cell {
+    -fx-border-width: 0px;
+}
+
+
+
+.tableStructureDialog {
+    -fx-background-color: salmon;
+}
+.tableStructureDialog > *.button-bar > *.container{
+    -fx-background-color: #a9e200;
+}
+.tableStructureDialog > *.label.content{
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+.tableStructureDialog:header *.header-panel{
+    -fx-background-color: #a59c31;
+}
+.tableStructureDialog:header *.header-panel *.label{
+    -fx-font-size: 18px;
+    -fx-font-style: italic;
+    -fx-color: blue;
+}
